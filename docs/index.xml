@@ -291,6 +291,15 @@
     </item>
     
     <item>
+      <title>Violinplot</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/seaborn/violinplot/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/violinplot/</guid>
+      <description># First, we&amp;#39;ll import pandas, a data processing and CSV file I/O library import pandas as pd # We&amp;#39;ll also import seaborn, a Python graphing library import warnings # current version of seaborn generates a bunch of warnings that we&amp;#39;ll ignore warnings.filterwarnings(&amp;#34;ignore&amp;#34;) import seaborn as sns import matplotlib.pyplot as plt sns.set(style=&amp;#34;white&amp;#34;, color_codes=True) # Next, we&amp;#39;ll load the Iris flower dataset, which is in the &amp;#34;../input/&amp;#34; directory iris = pd.read_csv(&amp;#34;Iris.csv&amp;#34;) # the iris dataset is now a Pandas DataFrame # Let&amp;#39;s see what&amp;#39;s in the iris data - Jupyter notebooks print the result of the last thing you do iris.</description>
+    </item>
+    
+    <item>
       <title>Array_Indexing</title>
       <link>https://aavinash1083.github.io/mlnotes/python/numpy/array_indexing/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
