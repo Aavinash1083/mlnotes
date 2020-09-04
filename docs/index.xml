@@ -157,6 +157,15 @@
     
     <item>
       <title>Type_casting</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/sklearn/refitting/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/sklearn/refitting/</guid>
+      <description>import numpy as np from sklearn.datasets import load_iris from sklearn.svm import SVC X, y = load_iris(return_X_y=True)clf = SVC() clf.set_params(kernel=&amp;#39;linear&amp;#39;).fit(X, y) SVC(kernel=&#39;linear&#39;)  clf.predict(X[:5]) array([0, 0, 0, 0, 0])  clf.set_params(kernel=&amp;#39;rbf&amp;#39;).fit(X, y) SVC()  clf.predict(X[:5]) array([0, 0, 0, 0, 0])  </description>
+    </item>
+    
+    <item>
+      <title>Type_casting</title>
       <link>https://aavinash1083.github.io/mlnotes/python/sklearn/type_casting/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
