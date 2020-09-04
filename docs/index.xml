@@ -139,6 +139,15 @@
     
     <item>
       <title>Lineplot</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/lineplot/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/lineplot/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npiris=pd.read_csv(&amp;#39;Iris.csv&amp;#39;)plt.plot(iris[&amp;#39;PetalLengthCm&amp;#39;], iris[&amp;#39;PetalWidthCm&amp;#39;], linestyle=&amp;#39;none&amp;#39;, marker=&amp;#39;o&amp;#39;, color=&amp;#39;b&amp;#39;) plt.show() x = np.linspace(0, 20, 1000) y = np.cos(x) plt.plot(x,y, color=&amp;#39;b&amp;#39;, linestyle=&amp;#39;--&amp;#39;) plt.show() </description>
+    </item>
+    
+    <item>
+      <title>Lineplot</title>
       <link>https://aavinash1083.github.io/mlnotes/python/seaborn/lineplot/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
