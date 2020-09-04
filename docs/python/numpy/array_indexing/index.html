@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66582-32"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-66582-32');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Array_Indexing" />
+<meta property="og:description" content="-" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aavinash1083.github.io/mlnotes/python/numpy/array_indexing/" /><meta property="article:published_time" content="2020-08-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-12T00:00:00&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Array_Indexing"/>
+<meta name="twitter:description" content="-"/>
+<meta name="generator" content="Hugo 0.50" /> 
+    
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Array_Indexing",
+  "url": "https://aavinash1083.github.io/mlnotes/python/numpy/array_indexing/",
+  "wordCount": "526",
+  "datePublished": "2020-08-12T00:00:00&#43;00:00",
+  "dateModified": "2020-08-12T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Aavinash"
+  },
+  "description": "-"
+}
+</script> 
+
+    <title>Array_Indexing</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://aavinash1083.github.io/mlnotes/css/custom.css" rel="stylesheet"> 
+    <link href="https://aavinash1083.github.io/mlnotes/css/syntax.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+        
+    <link href="" rel="alternate" type="application/rss+xml" title="Aavinash" /> 
+    
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://aavinash1083.github.io/mlnotes/">Aavinash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+                    
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+      
+    <h1 class="technical_note_title">Array_Indexing</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-08-12T00:00:00Z "> 12 Aug 2020</time>
+    </div>
+  </header>
+  <div class="content">
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Python program to demonstrate </span>
+<span class="c1"># indexing in numpy </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
+
+<span class="c1"># An exemplar array </span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> 
+				<span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> 
+				<span class="p">[</span><span class="mf">2.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> 
+				<span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">7</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">]])</span> 
+
+<span class="c1"># Slicing array </span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:</span><span class="mi">2</span><span class="p">,</span> <span class="p">::</span><span class="mi">2</span><span class="p">]</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;Array with first 2 rows and alternate&#34;</span>
+					<span class="s2">&#34;columns(0 and 2):</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span> 
+
+<span class="c1"># Integer array indexing example </span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Elements at indices (0, 3), (1, 2), (2, 1),&#34;</span>
+									<span class="s2">&#34;(3, 0):</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span> 
+
+<span class="c1"># boolean array indexing example </span>
+<span class="n">cond</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="c1"># cond is a boolean array </span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Elements greater than 0:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">temp</span><span class="p">)</span> </code></pre></div>
+<pre><code>Array with first 2 rows and alternatecolumns(0 and 2):
+ [[-1.  0.]
+ [ 4.  6.]]
+
+Elements at indices (0, 3), (1, 2), (2, 1),(3, 0):
+ [4. 6. 0. 3.]
+
+Elements greater than 0:
+ [2.  4.  4.  6.  2.6 7.  8.  3.  4.  2. ]
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Python program to demonstrate </span>
+<span class="c1"># array creation techniques </span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span> 
+
+<span class="c1"># Creating array from list with type float </span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]],</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;float&#39;</span><span class="p">)</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;Array created using passed list:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> 
+
+<span class="c1"># Creating array from tuple </span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">((</span><span class="mi">1</span> <span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Array created using passed tuple:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> 
+
+<span class="c1"># Creating a 3X4 array with all zeros </span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">An array initialized with all zeros:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span> 
+
+<span class="c1"># Create a constant value array of complex type </span>
+<span class="n">d</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span> <span class="n">dtype</span> <span class="o">=</span> <span class="s1">&#39;complex&#39;</span><span class="p">)</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">An array initialized with all 6s.&#34;</span>
+			<span class="s2">&#34;Array type is complex:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">d</span><span class="p">)</span> 
+
+<span class="c1"># Create an array with random values </span>
+<span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">A random array:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">e</span><span class="p">)</span> 
+
+<span class="c1"># Create a sequence of integers </span>
+<span class="c1"># from 0 to 30 with steps of 5 </span>
+<span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">A sequential array with steps of 5:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">f</span><span class="p">)</span> 
+
+<span class="c1"># Create a sequence of 10 values in range 0 to 5 </span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">A sequential array with 10 values between&#34;</span>
+										<span class="s2">&#34;0 and 5:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span> 
+
+<span class="c1"># Reshaping 3X4 array to 2X2X3 array </span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> 
+				<span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> 
+				<span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]])</span> 
+
+<span class="n">newarr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
+
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Original array:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;Reshaped array:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">newarr</span><span class="p">)</span> 
+
+<span class="c1"># Flatten array </span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]])</span> 
+<span class="n">flarr</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span> 
+
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">Original array:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">arr</span><span class="p">)</span> 
+<span class="k">print</span> <span class="p">(</span><span class="s2">&#34;Fattened array:</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">flarr</span><span class="p">)</span> </code></pre></div>
+<pre><code>Array created using passed list:
+ [[1. 2. 4.]
+ [5. 8. 7.]]
+
+Array created using passed tuple:
+ [1 3 2]
+
+An array initialized with all zeros:
+ [[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
+
+An array initialized with all 6s.Array type is complex:
+ [[6.+0.j 6.+0.j 6.+0.j]
+ [6.+0.j 6.+0.j 6.+0.j]
+ [6.+0.j 6.+0.j 6.+0.j]]
+
+A random array:
+ [[0.95594654 0.20215027]
+ [0.46244971 0.55882217]]
+
+A sequential array with steps of 5:
+ [ 0  5 10 15 20 25]
+
+A sequential array with 10 values between0 and 5:
+ [0.         0.55555556 1.11111111 1.66666667 2.22222222 2.77777778
+ 3.33333333 3.88888889 4.44444444 5.        ]
+
+Original array:
+ [[1 2 3 4]
+ [5 2 4 2]
+ [1 2 0 1]]
+Reshaped array:
+ [[[1 2 3]
+  [4 5 2]]
+
+ [[4 2 1]
+  [2 0 1]]]
+
+Original array:
+ [[1 2 3]
+ [4 5 6]]
+Fattened array:
+ [1 2 3 4 5 6]
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
+</div>
+  <aside>
+      
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">This project contains 38 pages and is available on <a href="https://github.com/aavinash1083">GitHub</a>. Copyright &copy; TEAM TACT, <time datetime="2019">2019</time>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

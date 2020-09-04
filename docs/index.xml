@@ -237,6 +237,15 @@
     </item>
     
     <item>
+      <title>Array_Indexing</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/numpy/array_indexing/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/numpy/array_indexing/</guid>
+      <description># Python program to demonstrate  # indexing in numpy  import numpy as np # An exemplar array  arr = np.array([[-1, 2, 0, 4], [4, -0.5, 6, 0], [2.6, 0, 7, 8], [3, -7, 4, 2.0]]) # Slicing array  temp = arr[:2, ::2] print (&amp;#34;Array with first 2 rows and alternate&amp;#34; &amp;#34;columns(0 and 2):\n&amp;#34;, temp) # Integer array indexing example  temp = arr[[0, 1, 2, 3], [3, 2, 1, 0]] print (&amp;#34;\nElements at indices (0, 3), (1, 2), (2, 1),&amp;#34; &amp;#34;(3, 0):\n&amp;#34;, temp) # boolean array indexing example  cond = arr &amp;gt; 0 # cond is a boolean array  temp = arr[cond] print (&amp;#34;\nElements greater than 0:\n&amp;#34;, temp)  Array with first 2 rows and alternatecolumns(0 and 2): [[-1.</description>
+    </item>
+    
+    <item>
       <title>Column_selection</title>
       <link>https://aavinash1083.github.io/mlnotes/python/pandas/column_selection/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
