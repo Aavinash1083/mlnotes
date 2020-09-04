@@ -16,14 +16,14 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<meta property="og:title" content="Logistic_Regression" />
+<meta property="og:title" content="Decision_Tree_Classifier" />
 <meta property="og:description" content="-" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://aavinash1083.github.io/mlnotes/python/algorithms/logistic_regression/" /><meta property="article:published_time" content="2020-09-04T00:00:00&#43;00:00"/>
+<meta property="og:url" content="https://aavinash1083.github.io/mlnotes/python/algorithms/decision_tree_classifier/" /><meta property="article:published_time" content="2020-09-04T00:00:00&#43;00:00"/>
 <meta property="article:modified_time" content="2020-09-04T00:00:00&#43;00:00"/>
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Logistic_Regression"/>
+<meta name="twitter:title" content="Decision_Tree_Classifier"/>
 <meta name="twitter:description" content="-"/>
 <meta name="generator" content="Hugo 0.50" /> 
     
@@ -32,9 +32,9 @@
 {
   "@context": "http://schema.org",
   "@type": "BlogPosting",
-  "headline": "Logistic_Regression",
-  "url": "https://aavinash1083.github.io/mlnotes/python/algorithms/logistic_regression/",
-  "wordCount": "337",
+  "headline": "Decision_Tree_Classifier",
+  "url": "https://aavinash1083.github.io/mlnotes/python/algorithms/decision_tree_classifier/",
+  "wordCount": "326",
   "datePublished": "2020-09-04T00:00:00&#43;00:00",
   "dateModified": "2020-09-04T00:00:00&#43;00:00",
   "author": {
@@ -45,7 +45,7 @@
 }
 </script> 
 
-    <title>Logistic_Regression</title>
+    <title>Decision_Tree_Classifier</title>
 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
@@ -117,7 +117,7 @@ MathJax.Hub.Config({
   <div class="technical_note">
   <header>
       
-    <h1 class="technical_note_title">Logistic_Regression</h1>
+    <h1 class="technical_note_title">Decision_Tree_Classifier</h1>
     <div class="technical_note_date">
       <time datetime=" 2020-09-04T00:00:00Z "> 04 Sep 2020</time>
     </div>
@@ -125,7 +125,7 @@ MathJax.Hub.Config({
   <div class="content">
   <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 
 <span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
@@ -190,18 +190,17 @@ X_train standardising features
  [0.6522579  0.35083601]
  [1.09770233 0.7372463 ]]
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
-<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 
-<span class="c1">## Initialise the logistc regression model with:</span>
-<span class="c1">##   C (regularization parameter) = 1000</span>
-<span class="n">lr</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">C</span> <span class="o">=</span> <span class="mf">1000.0</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span> <span class="p">)</span>
-<span class="n">lr</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train_standard</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">)</span></code></pre></div>
-<pre><code>LogisticRegression(C=1000.0, random_state=0)
+<span class="n">tree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">criterion</span><span class="o">=</span><span class="s1">&#39;entropy&#39;</span>
+                             <span class="p">,</span> <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">3</span>
+                             <span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">tree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span><span class="n">Y_train</span><span class="p">)</span></code></pre></div>
+<pre><code>DecisionTreeClassifier(criterion='entropy', max_depth=3, random_state=0)
 </code></pre>
-<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Y_pred_Logit</span> <span class="o">=</span> <span class="n">lr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test_standard</span><span class="p">)</span>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Y_pred_tree</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 
-<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Accuracy: </span><span class="si">%.2f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span><span class="n">Y_pred_Logit</span><span class="p">))</span></code></pre></div>
+<span class="k">print</span><span class="p">(</span><span class="s2">&#34;Accuracy: </span><span class="si">%.2f</span><span class="s2">&#34;</span> <span class="o">%</span> <span class="n">accuracy_score</span><span class="p">(</span><span class="n">Y_test</span><span class="p">,</span><span class="n">Y_pred_tree</span><span class="p">))</span></code></pre></div>
 <pre><code>Accuracy: 0.98
 </code></pre>
 <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
