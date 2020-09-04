@@ -12,12 +12,57 @@
     
     
     <item>
+      <title>Bar_chart</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart-copy1/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart-copy1/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npplt.bar([1,3,5,7,9],[5,2,7,8,2], label=&amp;#34;Example one&amp;#34;) plt.bar([2,4,6,8,10],[8,6,2,5,6], label=&amp;#34;Example two&amp;#34;, color=&amp;#39;g&amp;#39;) plt.legend() plt.xlabel(&amp;#39;bar number&amp;#39;) plt.ylabel(&amp;#39;bar height&amp;#39;) plt.title(&amp;#39;Epic Graph\nAnother Line! Whoa&amp;#39;) plt.show()  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    names jan_ir feb_ir march_ir     0 Nick 123 23 3   1 Sani 124 24 5   2 John 125 25 7   3 Rubi 126 27 6   4 Maya 128 29 9     korea_scores=(554,536,538) canada_scores=(518,523,525) china_scores=(413,570,580) franch_scores=(495,505,499) index=np.</description>
+    </item>
+    
+    <item>
+      <title>Bar_chart</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npraw_data={&amp;#39;names&amp;#39;:[&amp;#39;Nick&amp;#39;,&amp;#39;Sani&amp;#39;,&amp;#39;John&amp;#39;,&amp;#39;Rubi&amp;#39;,&amp;#39;Maya&amp;#39;], &amp;#39;jan_ir&amp;#39;:[123,124,125,126,128], &amp;#39;feb_ir&amp;#39;:[23,24,25,27,29], &amp;#39;march_ir&amp;#39;:[3,5,7,6,9]} df=pd.DataFrame(raw_data,columns=[&amp;#39;names&amp;#39;,&amp;#39;jan_ir&amp;#39;,&amp;#39;feb_ir&amp;#39;,&amp;#39;march_ir&amp;#39;]) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    names jan_ir feb_ir march_ir     0 Nick 123 23 3   1 Sani 124 24 5   2 John 125 25 7   3 Rubi 126 27 6   4 Maya 128 29 9     korea_scores=(554,536,538) canada_scores=(518,523,525) china_scores=(413,570,580) franch_scores=(495,505,499) index=np.</description>
+    </item>
+    
+    <item>
+      <title>Pie_chart </title>
+      <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/pie_chart/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/pie_chart/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as nplabels=[&amp;#39;Python&amp;#39;,&amp;#39;C&amp;#39;,&amp;#39;C++&amp;#39;,&amp;#39;PHP&amp;#39;,&amp;#39;Java&amp;#39;,&amp;#39;Ruby&amp;#39;] sizes=[33,52,12,17,42,48] separated=(.1,0,0,0,0,0) plt.pie(sizes,labels=labels,autopct=&amp;#39;%1.1f%%&amp;#39;,explode=separated) plt.axis(&amp;#39;equal&amp;#39;) plt.show() </description>
+    </item>
+    
+    <item>
+      <title>Population_Graph </title>
+      <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/population_graph/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/population_graph/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npyears=[1,1000,1500,1600,1700,1750,1800,1850,1900,1950,1955,1960,1965,1970,1980,1985,1990, 1995,2000,2005,2010,2015] pops=[200,400,458,580,682,791,1000,1262,1650,2525,2758,3018,3322,3682, 4061,4440,4853,5310,5735,6127,6520,7349] plt.plot(years,pops) plt.show &amp;lt;function matplotlib.pyplot.show(close=None, block=None)&amp;gt;  years=[1950,1955,1960,1965,1970,1980,1985,1990,1995,2000,2005,2010,2015] pops=[2.5,2.7,3.0,3.3,3.6,4.0,4.4,4.8,5.3,5.7,6.1,6.5,7.3] plt.plot(years,pops,color=(255/255,100/255,100/255)) plt.ylabel(&amp;#34;Population in Billions&amp;#34;) plt.xlabel(&amp;#34;Population growth by year&amp;#34;) plt.title(&amp;#34;Population Growth&amp;#34;) plt.show &amp;lt;function matplotlib.pyplot.show(close=None, block=None)&amp;gt;  </description>
+    </item>
+    
+    <item>
       <title>Python_addition</title>
       <link>https://aavinash1083.github.io/mlnotes/python/basics/python_addition/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aavinash1083.github.io/mlnotes/python/basics/python_addition/</guid>
       <description>print(9+9) 18  </description>
+    </item>
+    
+    <item>
+      <title>Scatterplot</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/scatterplot/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/scatterplot/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npx = [1,2,3,4,5,6,7,8] y = [5,2,4,2,1,4,5,2] plt.scatter(x,y, label=&amp;#39;skitscat Raggedy&amp;#39;, color=&amp;#39;k&amp;#39;, s=25, marker=&amp;#34;o&amp;#34;) plt.xlabel(&amp;#39;x&amp;#39;) plt.ylabel(&amp;#39;y&amp;#39;) plt.title(&amp;#39;Interesting Graph\nCheck it out&amp;#39;) plt.legend() plt.show() korea_scores=(554,536,538) canada_scores=(518,523,525) china_scores=(413,570,580) franch_scores=(495,505,499) index=np.arange(3) bar_width=.2 k1=plt.bar(index,korea_scores,bar_width,alpha=.9,label=&amp;#34;Korea&amp;#34;) c1=plt.bar(index+bar_width,canada_scores,bar_width,alpha=.9,label=&amp;#34;Canada&amp;#34;) ch1=plt.bar(index+bar_width*2,china_scores,bar_width,alpha=.9,label=&amp;#34;China&amp;#34;) f1=plt.bar(index+bar_width*3,franch_scores,bar_width,alpha=.9,label=&amp;#34;Franch&amp;#34;) plt.xticks(index+.6/2,(&amp;#39;Mathematics&amp;#39;,&amp;#39;Reading&amp;#39;,&amp;#39;Science&amp;#39;)) plt.ylabel(&amp;#39;Mean score in PISA in 2012&amp;#39;) plt.xlabel(&amp;#39;Subjects&amp;#39;) plt.title(&amp;#39;Test scores by Country&amp;#39;) plt.grid(True) plt.legend() plt.show() </description>
     </item>
     
     <item>
