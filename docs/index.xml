@@ -120,6 +120,15 @@
     </item>
     
     <item>
+      <title>K_Nearest_Neighbour</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/algorithms/k_nearest_neighbour/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/algorithms/k_nearest_neighbour/</guid>
+      <description>import pandas as pd import numpy as np from sklearn.metrics import accuracy_score import matplotlib.pyplot as plt %matplotlib inlinefrom sklearn import datasets iris = datasets.load_iris() X = iris.data[:,[2,3]] Y = iris.target print(X[1:5,:]) print(Y)  [[1.4 0.2] [1.3 0.2] [1.5 0.2] [1.4 0.2]] [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2]  ## 1.</description>
+    </item>
+    
+    <item>
       <title>Learning_and_predicting</title>
       <link>https://aavinash1083.github.io/mlnotes/python/sklearn/learning_and_predicting/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
