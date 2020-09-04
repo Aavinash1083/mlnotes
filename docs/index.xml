@@ -17,7 +17,7 @@
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/3d_scatter_plot/</guid>
-      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npfrom mpl_toolkits.mplot3d import axes3d import matplotlib.pyplot as plt from matplotlib import stylestyle.use(&amp;#39;fivethirtyeight&amp;#39;) fig = plt.figure() ax1 = fig.add_subplot(111, projection=&amp;#39;3d&amp;#39;) x = [1,2,3,4,5,6,7,8,9,10] y = [5,6,7,8,2,5,6,3,7,2] z = [1,2,6,3,2,7,3,3,7,2] ax1.plot(x,y,z) ax1.set_xlabel(&amp;#39;x axis&amp;#39;) ax1.set_ylabel(&amp;#39;y axis&amp;#39;) ax1.set_zlabel(&amp;#39;z axis&amp;#39;) plt.show() from mpl_toolkits.mplot3d import axes3d import matplotlib.pyplot as plt from matplotlib import stylestyle.use(&amp;#39;ggplot&amp;#39;) fig = plt.figure() ax1 = fig.add_subplot(111, projection=&amp;#39;3d&amp;#39;) x = [1,2,3,4,5,6,7,8,9,10] y = [5,6,7,8,2,5,6,3,7,2] z = [1,2,6,3,2,7,3,3,7,2] x2 = [-1,-2,-3,-4,-5,-6,-7,-8,-9,-10] y2 = [-5,-6,-7,-8,-2,-5,-6,-3,-7,-2] z2 = [1,2,6,3,2,7,3,3,7,2] ax1.</description>
+      <description>import matplotlib.pyplot as plt _ = plt.hist(data, bins=10, color=&amp;#39;lightblue&amp;#39;, label=lbl, density=True, ec=&amp;#39;white&amp;#39;) plt.legend() plt.title(&amp;#34;Target variable distribution&amp;#34;, fontdict={&amp;#39;fontsize&amp;#39;: 19, &amp;#39;fontweight&amp;#39;:0.5 }, pad=15) plt.xlabel(&amp;#34;Target Bins&amp;#34;) plt.ylabel(&amp;#34;Probability&amp;#34;); --------------------------------------------------------------------------- NameError Traceback (most recent call last) &amp;lt;ipython-input-5-27fcb3254561&amp;gt; in &amp;lt;module&amp;gt; 1 import matplotlib.pyplot as plt ----&amp;gt; 2 _ = plt.hist(data, bins=10, color=&#39;lightblue&#39;, 3 label=lbl, density=True, ec=&#39;white&#39;) 4 plt.legend() 5 plt.title(&amp;quot;Target variable distribution&amp;quot;, fontdict={&#39;fontsize&#39;: 19, NameError: name &#39;data&#39; is not defined  import matplotlib.pyplot as plt from SWMat.</description>
     </item>
     
     <item>
@@ -279,6 +279,15 @@
       
       <guid>https://aavinash1083.github.io/mlnotes/python/pandas/function_in_dataframes/</guid>
       <description># Import pandas package  import pandas as pd # Function to add  def add(a, b, c): return a + b + c def main(): # create a dictionary with  # three fields each  data = { &amp;#39;A&amp;#39;:[1, 2, 3], &amp;#39;B&amp;#39;:[4, 5, 6], &amp;#39;C&amp;#39;:[7, 8, 9] } # Convert the dictionary into DataFrame  df = pd.DataFrame(data) print(&amp;#34;Original DataFrame:\n&amp;#34;, df) df[&amp;#39;add&amp;#39;] = df.apply(lambda row : add(row[&amp;#39;A&amp;#39;], row[&amp;#39;B&amp;#39;], row[&amp;#39;C&amp;#39;]), axis = 1) print(&amp;#39;\nAfter Applying Function: &amp;#39;) # printing the new dataframe  print(df) if __name__ == &amp;#39;__main__&amp;#39;: main()  Original DataFrame: A B C 0 1 4 7 1 2 5 8 2 3 6 9 After Applying Function: A B C add 0 1 4 7 12 1 2 5 8 15 2 3 6 9 18  # Import pandas package  import pandas as pd def normalize(x, y): x_new = ((x - np.</description>
+    </item>
+    
+    <item>
+      <title>Numpy_array</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/numpy/numpy_array/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/numpy/numpy_array/</guid>
+      <description># Python program for # Creation of Arrays import numpy as np # Creating a rank 1 Array arr = np.array([1, 2, 3]) print(&amp;#34;Array with Rank 1: \n&amp;#34;,arr) # Creating a rank 2 Array arr = np.array([[1, 2, 3], [4, 5, 6]]) print(&amp;#34;Array with Rank 2: \n&amp;#34;, arr) # Creating an array from tuple arr = np.array((1, 3, 2)) print(&amp;#34;\nArray created using &amp;#34; &amp;#34;passed tuple:\n&amp;#34;, arr) Array with Rank 1: [1 2 3] Array with Rank 2: [[1 2 3] [4 5 6]] Array created using passed tuple: [1 3 2]  # Python program to demonstrate # indexing in numpy array import numpy as np # Initial Array arr = np.</description>
     </item>
     
     <item>
