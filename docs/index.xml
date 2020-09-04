@@ -210,6 +210,15 @@
     </item>
     
     <item>
+      <title>Date_Time_Functions</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/pandas/date_time_functions/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/pandas/date_time_functions/</guid>
+      <description>import pandas as pd # Create dates dataframe with frequency  data = pd.date_range(&amp;#39;1/1/2011&amp;#39;, periods = 10, freq =&amp;#39;H&amp;#39;) data  DatetimeIndex([&#39;2011-01-01 00:00:00&#39;, &#39;2011-01-01 01:00:00&#39;, &#39;2011-01-01 02:00:00&#39;, &#39;2011-01-01 03:00:00&#39;, &#39;2011-01-01 04:00:00&#39;, &#39;2011-01-01 05:00:00&#39;, &#39;2011-01-01 06:00:00&#39;, &#39;2011-01-01 07:00:00&#39;, &#39;2011-01-01 08:00:00&#39;, &#39;2011-01-01 09:00:00&#39;], dtype=&#39;datetime64[ns]&#39;, freq=&#39;H&#39;)  # Create date and time with dataframe  rng = pd.DataFrame() rng[&amp;#39;date&amp;#39;] = pd.date_range(&amp;#39;1/1/2011&amp;#39;, periods = 72, freq =&amp;#39;H&amp;#39;) # Print the dates in dd-mm-yy format  rng[:5] # Create features for year, month, day, hour, and minute  rng[&amp;#39;year&amp;#39;] = rng[&amp;#39;date&amp;#39;].</description>
+    </item>
+    
+    <item>
       <title>Function_in_Dataframes</title>
       <link>https://aavinash1083.github.io/mlnotes/python/pandas/function_in_dataframes/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
