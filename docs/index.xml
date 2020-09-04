@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>Andrews_Curves</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/pandas/andrews_curves/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/pandas/andrews_curves/</guid>
+      <description># We&amp;#39;ll also import seaborn, a Python graphing library import warnings # current version of seaborn generates a bunch of warnings that we&amp;#39;ll ignore warnings.filterwarnings(&amp;#34;ignore&amp;#34;) import seaborn as sns import matplotlib.pyplot as plt import pandas as pd sns.set(style=&amp;#34;white&amp;#34;, color_codes=True) # Next, we&amp;#39;ll load the Iris flower dataset, which is in the &amp;#34;../input/&amp;#34; directory iris = pd.read_csv(&amp;#34;Iris.csv&amp;#34;) # the iris dataset is now a Pandas DataFrame # Let&amp;#39;s see what&amp;#39;s in the iris data - Jupyter notebooks print the result of the last thing you do iris.</description>
+    </item>
+    
+    <item>
       <title>Bar_chart</title>
       <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
