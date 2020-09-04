@@ -118,7 +118,7 @@ plt.show()
 ```
 
 
-![png](Bar_chart-Copy1_3_0.png)
+![png](Bar_chart_3_0.png)
 
 
 
