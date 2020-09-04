@@ -210,6 +210,15 @@
     </item>
     
     <item>
+      <title>Visualisations</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/pandas/visualisations/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/pandas/visualisations/</guid>
+      <description>import numpy as np import pandas as pd df1 = pd.read_csv(&amp;#39;glass.csv&amp;#39;, index_col = 0) df1[&amp;#39;Type&amp;#39;].hist()  &amp;lt;AxesSubplot:&amp;gt;  import matplotlib.pyplot as plt plt.style.use(&amp;#39;ggplot&amp;#39;) df1[&amp;#39;Type&amp;#39;].hist()  &amp;lt;AxesSubplot:&amp;gt;  df1.plot.area(alpha = 0.4)  &amp;lt;AxesSubplot:xlabel=&#39;RI&#39;&amp;gt;  df1.plot.scatter(x =&amp;#39;Na&amp;#39;, y =&amp;#39;Type&amp;#39;)  &amp;lt;AxesSubplot:xlabel=&#39;Na&#39;, ylabel=&#39;Type&#39;&amp;gt;  </description>
+    </item>
+    
+    <item>
       <title>pandas</title>
       <link>https://aavinash1083.github.io/mlnotes/python/pandas/pandas/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
