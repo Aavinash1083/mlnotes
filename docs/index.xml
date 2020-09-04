@@ -21,15 +21,6 @@
     </item>
     
     <item>
-      <title>Bar_chart</title>
-      <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart/</link>
-      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart/</guid>
-      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npraw_data={&amp;#39;names&amp;#39;:[&amp;#39;Nick&amp;#39;,&amp;#39;Sani&amp;#39;,&amp;#39;John&amp;#39;,&amp;#39;Rubi&amp;#39;,&amp;#39;Maya&amp;#39;], &amp;#39;jan_ir&amp;#39;:[123,124,125,126,128], &amp;#39;feb_ir&amp;#39;:[23,24,25,27,29], &amp;#39;march_ir&amp;#39;:[3,5,7,6,9]} df=pd.DataFrame(raw_data,columns=[&amp;#39;names&amp;#39;,&amp;#39;jan_ir&amp;#39;,&amp;#39;feb_ir&amp;#39;,&amp;#39;march_ir&amp;#39;]) df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    names jan_ir feb_ir march_ir     0 Nick 123 23 3   1 Sani 124 24 5   2 John 125 25 7   3 Rubi 126 27 6   4 Maya 128 29 9     korea_scores=(554,536,538) canada_scores=(518,523,525) china_scores=(413,570,580) franch_scores=(495,505,499) index=np.</description>
-    </item>
-    
-    <item>
       <title>Pie_chart </title>
       <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/pie_chart/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
