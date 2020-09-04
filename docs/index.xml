@@ -201,6 +201,15 @@
     </item>
     
     <item>
+      <title>Dataframe_to_csv</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/pandas/dataframe_to_csv/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/pandas/dataframe_to_csv/</guid>
+      <description>import pandas as pd nme = [&amp;#34;aparna&amp;#34;, &amp;#34;pankaj&amp;#34;, &amp;#34;sudhir&amp;#34;, &amp;#34;Geeku&amp;#34;] deg = [&amp;#34;MBA&amp;#34;, &amp;#34;BCA&amp;#34;, &amp;#34;M.Tech&amp;#34;, &amp;#34;MBA&amp;#34;] scr = [90, 40, 80, 98] dict = {&amp;#39;name&amp;#39;: nme, &amp;#39;degree&amp;#39;: deg, &amp;#39;score&amp;#39;: scr} df = pd.DataFrame(dict) df.to_csv(&amp;#39;file1.csv&amp;#39;) import pandas as pd nme = [&amp;#34;aparna&amp;#34;, &amp;#34;pankaj&amp;#34;, &amp;#34;sudhir&amp;#34;, &amp;#34;Geeku&amp;#34;] deg = [&amp;#34;MBA&amp;#34;, &amp;#34;BCA&amp;#34;, &amp;#34;M.Tech&amp;#34;, &amp;#34;MBA&amp;#34;] scr = [90, 40, 80, 98] dict = {&amp;#39;name&amp;#39;: nme, &amp;#39;degree&amp;#39;: deg, &amp;#39;score&amp;#39;: scr} df = pd.DataFrame(dict) df.to_csv(&amp;#39;file2.csv&amp;#39;, header=False, index=False) import pandas as pd nme = [&amp;#34;aparna&amp;#34;, &amp;#34;pankaj&amp;#34;, &amp;#34;sudhir&amp;#34;, &amp;#34;Geeku&amp;#34;] deg = [&amp;#34;MBA&amp;#34;, &amp;#34;BCA&amp;#34;, &amp;#34;M.</description>
+    </item>
+    
+    <item>
       <title>Row_selection</title>
       <link>https://aavinash1083.github.io/mlnotes/python/pandas/row_selection/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
