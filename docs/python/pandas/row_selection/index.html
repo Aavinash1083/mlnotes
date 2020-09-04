@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66582-32"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-66582-32');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Row_selection" />
+<meta property="og:description" content="-" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aavinash1083.github.io/mlnotes/python/pandas/row_selection/" /><meta property="article:published_time" content="2020-08-12T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-08-12T00:00:00&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Row_selection"/>
+<meta name="twitter:description" content="-"/>
+<meta name="generator" content="Hugo 0.50" /> 
+    
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Row_selection",
+  "url": "https://aavinash1083.github.io/mlnotes/python/pandas/row_selection/",
+  "wordCount": "441",
+  "datePublished": "2020-08-12T00:00:00&#43;00:00",
+  "dateModified": "2020-08-12T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Aavinash"
+  },
+  "description": "-"
+}
+</script> 
+
+    <title>Row_selection</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://aavinash1083.github.io/mlnotes/css/custom.css" rel="stylesheet"> 
+    <link href="https://aavinash1083.github.io/mlnotes/css/syntax.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+        
+    <link href="" rel="alternate" type="application/rss+xml" title="Aavinash" /> 
+    
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://aavinash1083.github.io/mlnotes/">Aavinash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+                    
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+      
+    <h1 class="technical_note_title">Row_selection</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-08-12T00:00:00Z "> 12 Aug 2020</time>
+    </div>
+  </header>
+  <div class="content">
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&#34;glass.csv&#34;</span><span class="p">,</span> <span class="n">index_col</span> <span class="o">=</span><span class="s2">&#34;Type&#34;</span><span class="p">)</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">first</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&#34;1&#34;</span><span class="p">]</span>
+<span class="n">second</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&#34;7&#34;</span><span class="p">]</span>
+ </code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">first</span><span class="p">,</span> <span class="s2">&#34;</span><span class="se">\n\n\n</span><span class="s2">&#34;</span><span class="p">,</span> <span class="n">second</span><span class="p">)</span></code></pre></div>
+<pre><code>           RI     Na    Mg    Al     Si     K     Ca   Ba    Fe
+Type                                                           
+1     1.52101  13.64  4.49  1.10  71.78  0.06   8.75  0.0  0.00
+1     1.51761  13.89  3.60  1.36  72.73  0.48   7.83  0.0  0.00
+1     1.51618  13.53  3.55  1.54  72.99  0.39   7.78  0.0  0.00
+1     1.51766  13.21  3.69  1.29  72.61  0.57   8.22  0.0  0.00
+1     1.51742  13.27  3.62  1.24  73.08  0.55   8.07  0.0  0.00
+...       ...    ...   ...   ...    ...   ...    ...  ...   ...
+1     1.52099  13.69  3.59  1.12  71.96  0.09   9.40  0.0  0.00
+1     1.52152  13.05  3.65  0.87  72.22  0.19   9.85  0.0  0.17
+1     1.52152  13.05  3.65  0.87  72.32  0.19   9.85  0.0  0.17
+1     1.52152  13.12  3.58  0.90  72.20  0.23   9.82  0.0  0.16
+1     1.52300  13.31  3.58  0.82  71.99  0.12  10.17  0.0  0.03
+
+[70 rows x 9 columns] 
+
+
+            RI     Na    Mg    Al     Si     K    Ca    Ba    Fe
+Type                                                           
+7     1.51131  13.69  3.20  1.81  72.81  1.76  5.43  1.19  0.00
+7     1.51838  14.32  3.26  2.22  71.25  1.46  5.79  1.63  0.00
+7     1.52315  13.44  3.34  1.23  72.38  0.60  8.83  0.00  0.00
+7     1.52247  14.86  2.20  2.06  70.26  0.76  9.76  0.00  0.00
+7     1.52365  15.79  1.83  1.31  70.43  0.31  8.61  1.68  0.00
+7     1.51613  13.88  1.78  1.79  73.10  0.00  8.67  0.76  0.00
+7     1.51602  14.85  0.00  2.38  73.28  0.00  8.76  0.64  0.09
+7     1.51623  14.20  0.00  2.79  73.46  0.04  9.04  0.40  0.09
+7     1.51719  14.75  0.00  2.00  73.02  0.00  8.53  1.59  0.08
+7     1.51683  14.56  0.00  1.98  73.29  0.00  8.52  1.57  0.07
+7     1.51545  14.14  0.00  2.68  73.39  0.08  9.07  0.61  0.05
+7     1.51556  13.87  0.00  2.54  73.23  0.14  9.41  0.81  0.01
+7     1.51727  14.70  0.00  2.34  73.28  0.00  8.95  0.66  0.00
+7     1.51531  14.38  0.00  2.66  73.10  0.04  9.08  0.64  0.00
+7     1.51609  15.01  0.00  2.51  73.05  0.05  8.83  0.53  0.00
+7     1.51508  15.15  0.00  2.25  73.50  0.00  8.34  0.63  0.00
+7     1.51653  11.95  0.00  1.19  75.18  2.70  8.93  0.00  0.00
+7     1.51514  14.85  0.00  2.42  73.72  0.00  8.39  0.56  0.00
+7     1.51658  14.80  0.00  1.99  73.11  0.00  8.28  1.71  0.00
+7     1.51617  14.95  0.00  2.27  73.30  0.00  8.71  0.67  0.00
+7     1.51732  14.95  0.00  1.80  72.99  0.00  8.61  1.55  0.00
+7     1.51645  14.94  0.00  1.87  73.11  0.00  8.67  1.38  0.00
+7     1.51831  14.39  0.00  1.82  72.86  1.41  6.47  2.88  0.00
+7     1.51640  14.37  0.00  2.74  72.85  0.00  9.45  0.54  0.00
+7     1.51623  14.14  0.00  2.88  72.61  0.08  9.18  1.06  0.00
+7     1.51685  14.92  0.00  1.99  73.06  0.00  8.40  1.59  0.00
+7     1.52065  14.36  0.00  2.02  73.42  0.00  8.44  1.64  0.00
+7     1.51651  14.38  0.00  1.94  73.61  0.00  8.48  1.57  0.00
+7     1.51711  14.23  0.00  2.08  73.36  0.00  8.62  1.67  0.00
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"></code></pre></div>
+</div>
+  <aside>
+      
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">This project contains 25 pages and is available on <a href="https://github.com/aavinash1083">GitHub</a>. Copyright &copy; TEAM TACT, <time datetime="2019">2019</time>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
