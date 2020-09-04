@@ -75,6 +75,15 @@
     </item>
     
     <item>
+      <title>Jointplot</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/seaborn/jointplot/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/jointplot/</guid>
+      <description>import seaborn as sns import matplotlib.pyplot as plt plt.style.use(&amp;#39;classic&amp;#39;) %matplotlib inline import numpy as np import pandas as pdrng = np.random.RandomState(0) x = np.linspace(0, 10, 500) y = np.cumsum(rng.randn(500, 6), 0)data = np.random.multivariate_normal([0, 0], [[5, 2], [2, 2]], size=2000) data = pd.DataFrame(data, columns=[&amp;#39;x&amp;#39;, &amp;#39;y&amp;#39;])with sns.axes_style(&amp;#39;white&amp;#39;): sns.jointplot(&amp;#34;x&amp;#34;, &amp;#34;y&amp;#34;, data, kind=&amp;#39;kde&amp;#39;); with sns.axes_style(&amp;#39;white&amp;#39;): sns.jointplot(&amp;#34;x&amp;#34;, &amp;#34;y&amp;#34;, data, kind=&amp;#39;hex&amp;#39;) </description>
+    </item>
+    
+    <item>
       <title>KDEplot</title>
       <link>https://aavinash1083.github.io/mlnotes/python/seaborn/kdeplot/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
