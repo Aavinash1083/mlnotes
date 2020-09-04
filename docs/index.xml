@@ -66,6 +66,15 @@
     </item>
     
     <item>
+      <title>KDEplot</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/seaborn/kdeplot/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/kdeplot/</guid>
+      <description>import seaborn as snsrng = np.random.RandomState(0) x = np.linspace(0, 10, 500) y = np.cumsum(rng.randn(500, 6), 0)plt.plot(x, y) plt.legend(&amp;#39;ABCDEF&amp;#39;, ncol=2, loc=&amp;#39;upper left&amp;#39;); for col in &amp;#39;xy&amp;#39;: sns.kdeplot(data[col], shade=True) </description>
+    </item>
+    
+    <item>
       <title>Learning_and_predicting</title>
       <link>https://aavinash1083.github.io/mlnotes/python/sklearn/learning_and_predicting/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
