@@ -183,6 +183,15 @@
     </item>
     
     <item>
+      <title>Column_selection</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/pandas/column_selection/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/pandas/column_selection/</guid>
+      <description>import pandas as pddata = pd.read_csv(&amp;#34;glass.csv&amp;#34;, index_col =&amp;#34;Type&amp;#34;)first = data[&amp;#34;Na&amp;#34;]print(first) Type 1 13.64 1 13.89 1 13.53 1 13.21 1 13.27 ... 7 14.14 7 14.92 7 14.36 7 14.38 7 14.23 Name: Na, Length: 214, dtype: float64  </description>
+    </item>
+    
+    <item>
       <title>Creating_Dataframes</title>
       <link>https://aavinash1083.github.io/mlnotes/python/pandas/creating_dataframes/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
