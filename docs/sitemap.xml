@@ -28,11 +28,6 @@
   </url>
   
   <url>
-    <loc>https://aavinash1083.github.io/mlnotes/python/seaborn/factorplot-copy1/</loc>
-    <lastmod>2020-09-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://aavinash1083.github.io/mlnotes/python/seaborn/factorplot/</loc>
     <lastmod>2020-09-04T00:00:00+00:00</lastmod>
   </url>
@@ -44,6 +39,11 @@
   
   <url>
     <loc>https://aavinash1083.github.io/mlnotes/python/seaborn/heatmap/</loc>
+    <lastmod>2020-09-04T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aavinash1083.github.io/mlnotes/python/seaborn/joint_distributions/</loc>
     <lastmod>2020-09-04T00:00:00+00:00</lastmod>
   </url>
   
