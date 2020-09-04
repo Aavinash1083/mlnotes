@@ -183,6 +183,15 @@
     </item>
     
     <item>
+      <title>Creating_Dataframes</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/pandas/creating_dataframes/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/pandas/creating_dataframes/</guid>
+      <description>import pandas as pdlst = [&amp;#39;Geeks&amp;#39;, &amp;#39;For&amp;#39;, &amp;#39;Geeks&amp;#39;, &amp;#39;is&amp;#39;, &amp;#39;portal&amp;#39;, &amp;#39;for&amp;#39;, &amp;#39;Geeks&amp;#39;] df = pd.DataFrame(lst)df  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    0     0 Geeks   1 For   2 Geeks   3 is   4 portal   5 for   6 Geeks     data = {&amp;#39;Name&amp;#39;:[&amp;#39;Tom&amp;#39;, &amp;#39;nick&amp;#39;, &amp;#39;krish&amp;#39;, &amp;#39;jack&amp;#39;], &amp;#39;Age&amp;#39;:[20, 21, 19, 18]}df = pd.</description>
+    </item>
+    
+    <item>
       <title>pandas</title>
       <link>https://aavinash1083.github.io/mlnotes/python/pandas/pandas/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
