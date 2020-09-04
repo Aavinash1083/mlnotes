@@ -1,5 +1,5 @@
 ---
-title: "Lineplot"
+title: "Barplot"
 author: "Aavinash"
 date: 2020-09-04
 description: "-"
@@ -405,21 +405,7 @@ axes.yaxis.set_major_formatter(formatter)
 ```
 
 
-    ---------------------------------------------------------------------------
-
-    NameError                                 Traceback (most recent call last)
-
-    <ipython-input-8-a4f8a469da21> in <module>
-          2 axes = sns.barplot(x='Name Pairs', y ='Streak Counts', data=data_streaks, estimator=np.sum)
-          3 axes.set(ylabel='Sum of Streak Numbers')
-    ----> 4 axes.yaxis.set_major_formatter(formatter)
-    
-
-    NameError: name 'formatter' is not defined
-
-
-
-![png](Barplot_8_1.png)
+![png](Barplot_8_0.png)
 
 
 

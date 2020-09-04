@@ -22,11 +22,29 @@
     
     <item>
       <title>Bar_chart</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/sklearn/loading_datasets/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/sklearn/loading_datasets/</guid>
+      <description>from sklearn import datasets iris = datasets.load_iris() digits = datasets.load_digits()print(digits.data) [[ 0. 0. 5. ... 0. 0. 0.] [ 0. 0. 0. ... 10. 0. 0.] [ 0. 0. 0. ... 16. 9. 0.] ... [ 0. 0. 1. ... 6. 0. 0.] [ 0. 0. 2. ... 12. 0. 0.] [ 0. 0. 10. ... 12. 1. 0.]]  digits.</description>
+    </item>
+    
+    <item>
+      <title>Bar_chart</title>
       <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart/</guid>
       <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npplt.bar([1,3,5,7,9],[5,2,7,8,2], label=&amp;#34;Example one&amp;#34;) plt.bar([2,4,6,8,10],[8,6,2,5,6], label=&amp;#34;Example two&amp;#34;, color=&amp;#39;g&amp;#39;) plt.legend() plt.xlabel(&amp;#39;bar number&amp;#39;) plt.ylabel(&amp;#39;bar height&amp;#39;) plt.title(&amp;#39;Epic Graph\nAnother Line! Whoa&amp;#39;) plt.show()  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    names jan_ir feb_ir march_ir     0 Nick 123 23 3   1 Sani 124 24 5   2 John 125 25 7   3 Rubi 126 27 6   4 Maya 128 29 9     korea_scores=(554,536,538) canada_scores=(518,523,525) china_scores=(413,570,580) franch_scores=(495,505,499) index=np.</description>
+    </item>
+    
+    <item>
+      <title>Barplot</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/seaborn/barplot/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/barplot/</guid>
+      <description>import numpy as np import pandas as pd import matplotlib.pyplot as plt import seaborn as sns %matplotlib inlinedata = pd.read_csv(&amp;#39;Whatsapp_chat.csv&amp;#39;, index_col=0) data  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    hours days months names timestamp     0 1 19 May Person4 2020-05-19   1 22 19 May Person3 2020-05-19   2 22 19 May Person3 2020-05-19   3 22 19 May Person1 2020-05-19   4 22 19 May Person3 2020-05-19   .</description>
     </item>
     
     <item>
@@ -53,15 +71,6 @@
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/heatmap/</guid>
-      <description>import numpy as np import pandas as pd import matplotlib.pyplot as plt import seaborn as sns %matplotlib inlinedata = pd.read_csv(&amp;#39;Whatsapp_chat.csv&amp;#39;, index_col=0) data  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    hours days months names timestamp     0 1 19 May Person4 2020-05-19   1 22 19 May Person3 2020-05-19   2 22 19 May Person3 2020-05-19   3 22 19 May Person1 2020-05-19   4 22 19 May Person3 2020-05-19   .</description>
-    </item>
-    
-    <item>
-      <title>Lineplot</title>
-      <link>https://aavinash1083.github.io/mlnotes/python/seaborn/barplot/</link>
-      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/barplot/</guid>
       <description>import numpy as np import pandas as pd import matplotlib.pyplot as plt import seaborn as sns %matplotlib inlinedata = pd.read_csv(&amp;#39;Whatsapp_chat.csv&amp;#39;, index_col=0) data  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    hours days months names timestamp     0 1 19 May Person4 2020-05-19   1 22 19 May Person3 2020-05-19   2 22 19 May Person3 2020-05-19   3 22 19 May Person1 2020-05-19   4 22 19 May Person3 2020-05-19   .</description>
     </item>
     
