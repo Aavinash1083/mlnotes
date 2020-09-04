@@ -1,5 +1,5 @@
 ---
-title: "Type_casting"
+title: "Refitting"
 author: "Aavinash"
 date: 2020-09-04
 description: "-"
@@ -63,8 +63,3 @@ clf.predict(X[:5])
     array([0, 0, 0, 0, 0])
 
 
-
-
-```python
-
-```
