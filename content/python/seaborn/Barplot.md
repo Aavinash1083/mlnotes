@@ -222,8 +222,66 @@ data.groupby('names').count()
 
 
 ```python
-data_by_timestamp = data[['timestamp', 'names']].value_counts().unstack(level=1).fillna(0)
-data_by_timestamp
+from matplotlib import ticker
+formatter = ticker.ScalarFormatter(useMathText=True)
+formatter.set_scientific(True) 
+formatter.set_powerlimits((3,3))
+```
+
+
+```python
+names = np.array(data['names'])
+hours = np.array(data['hours'])
+dates = np.array(data['timestamp'])
+```
+
+
+```python
+date_list = []
+name_pair = []
+time_interval = []
+count = 0
+name_pair_list = []
+streak_list = []
+time_interval_list = []
+index = 0
+for name in names:
+    if len(name_pair) == 0:
+        count += 1
+        name_pair.append(name)
+        date = dates[index]
+        time_interval.append(hours[index])
+    elif len(name_pair) == 1:
+        count += 1
+        if name not in name_pair:
+            name_pair.append(name)
+            if len(time_interval) == 2:
+                time_interval[1] = hours[index]
+            else:
+                time_interval.append(hours[index])
+    elif name in name_pair:
+        time_interval[1] = hours[index]
+        count += 1
+    else:
+        if count>49:
+            streak_list.append(count)
+            copy_pair = sorted(name_pair)
+            name_pair_list.append((copy_pair[0], copy_pair[1]))
+            time_interval_list.append((time_interval[0], time_interval[1]))
+            date_list.append(date)
+        count = 1
+        name_pair.pop(0)
+        time_interval.pop(0)
+        name_pair.append(name)
+        time_interval.append(hours[index])
+        date = dates[index]
+    index += 1
+```
+
+
+```python
+data_streaks = pd.DataFrame({'Name Pairs':name_pair_list, 'Streak Counts':streak_list, 'Time Interval':time_interval_list, 'Timestamp':date_list})
+data_streaks.sort_values(by='Streak Counts', ascending=False)
 ```
 
 
@@ -246,55 +304,48 @@ data_by_timestamp
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>names</th>
-      <th>Person1</th>
-      <th>Person2</th>
-      <th>Person3</th>
-      <th>Person4</th>
-    </tr>
-    <tr>
-      <th>timestamp</th>
       <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Name Pairs</th>
+      <th>Streak Counts</th>
+      <th>Time Interval</th>
+      <th>Timestamp</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th>2020-05-19</th>
-      <td>5.0</td>
-      <td>0.0</td>
-      <td>3.0</td>
-      <td>1.0</td>
+      <th>6</th>
+      <td>(Person1, Person4)</td>
+      <td>493</td>
+      <td>(22, 2)</td>
+      <td>2020-05-31</td>
     </tr>
     <tr>
-      <th>2020-05-20</th>
-      <td>0.0</td>
-      <td>1.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <th>92</th>
+      <td>(Person1, Person4)</td>
+      <td>359</td>
+      <td>(23, 0)</td>
+      <td>2020-08-03</td>
     </tr>
     <tr>
-      <th>2020-05-22</th>
-      <td>4.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
+      <th>5</th>
+      <td>(Person1, Person4)</td>
+      <td>316</td>
+      <td>(18, 1)</td>
+      <td>2020-05-28</td>
     </tr>
     <tr>
-      <th>2020-05-25</th>
-      <td>128.0</td>
-      <td>7.0</td>
-      <td>46.0</td>
-      <td>105.0</td>
+      <th>49</th>
+      <td>(Person3, Person4)</td>
+      <td>286</td>
+      <td>(2, 4)</td>
+      <td>2020-07-11</td>
     </tr>
     <tr>
-      <th>2020-05-26</th>
-      <td>200.0</td>
-      <td>7.0</td>
-      <td>145.0</td>
-      <td>144.0</td>
+      <th>45</th>
+      <td>(Person1, Person4)</td>
+      <td>213</td>
+      <td>(21, 23)</td>
+      <td>2020-07-08</td>
     </tr>
     <tr>
       <th>...</th>
@@ -304,64 +355,71 @@ data_by_timestamp
       <td>...</td>
     </tr>
     <tr>
-      <th>2020-08-08</th>
-      <td>125.0</td>
-      <td>1.0</td>
-      <td>84.0</td>
-      <td>150.0</td>
+      <th>48</th>
+      <td>(Person1, Person4)</td>
+      <td>51</td>
+      <td>(23, 23)</td>
+      <td>2020-07-10</td>
     </tr>
     <tr>
-      <th>2020-08-09</th>
-      <td>82.0</td>
-      <td>5.0</td>
-      <td>129.0</td>
-      <td>153.0</td>
+      <th>52</th>
+      <td>(Person1, Person3)</td>
+      <td>51</td>
+      <td>(22, 23)</td>
+      <td>2020-07-12</td>
     </tr>
     <tr>
-      <th>2020-08-10</th>
-      <td>309.0</td>
-      <td>58.0</td>
-      <td>241.0</td>
-      <td>288.0</td>
+      <th>104</th>
+      <td>(Person1, Person4)</td>
+      <td>51</td>
+      <td>(17, 17)</td>
+      <td>2020-08-12</td>
     </tr>
     <tr>
-      <th>2020-08-11</th>
-      <td>139.0</td>
-      <td>40.0</td>
-      <td>108.0</td>
-      <td>151.0</td>
+      <th>8</th>
+      <td>(Person2, Person4)</td>
+      <td>50</td>
+      <td>(3, 10)</td>
+      <td>2020-06-02</td>
     </tr>
     <tr>
-      <th>2020-08-12</th>
-      <td>235.0</td>
-      <td>9.0</td>
-      <td>110.0</td>
-      <td>157.0</td>
+      <th>36</th>
+      <td>(Person1, Person3)</td>
+      <td>50</td>
+      <td>(11, 12)</td>
+      <td>2020-06-29</td>
     </tr>
   </tbody>
 </table>
-<p>83 rows × 4 columns</p>
+<p>106 rows × 4 columns</p>
 </div>
 
 
 
 
 ```python
-plt.figure(figsize=(20,10))
-ax = sns.lineplot(data=data_by_timestamp)
-ax.xaxis.set_ticks(np.arange(0, 100, 10))
-ax
+plt.figure(figsize=(10,5))
+axes = sns.barplot(x='Name Pairs', y ='Streak Counts', data=data_streaks, estimator=np.sum)
+axes.set(ylabel='Sum of Streak Numbers')
+axes.yaxis.set_major_formatter(formatter)
 ```
 
 
+    ---------------------------------------------------------------------------
+
+    NameError                                 Traceback (most recent call last)
+
+    <ipython-input-8-a4f8a469da21> in <module>
+          2 axes = sns.barplot(x='Name Pairs', y ='Streak Counts', data=data_streaks, estimator=np.sum)
+          3 axes.set(ylabel='Sum of Streak Numbers')
+    ----> 4 axes.yaxis.set_major_formatter(formatter)
+    
+
+    NameError: name 'formatter' is not defined
 
 
-    <AxesSubplot:xlabel='timestamp'>
 
-
-
-
-![png](Lineplot_5_1.png)
+![png](Barplot_8_1.png)
 
 
 
