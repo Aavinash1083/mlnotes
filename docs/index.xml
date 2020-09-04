@@ -22,15 +22,6 @@
     
     <item>
       <title>Bar_chart</title>
-      <link>https://aavinash1083.github.io/mlnotes/python/sklearn/loading_datasets/</link>
-      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://aavinash1083.github.io/mlnotes/python/sklearn/loading_datasets/</guid>
-      <description>from sklearn import datasets iris = datasets.load_iris() digits = datasets.load_digits()print(digits.data) [[ 0. 0. 5. ... 0. 0. 0.] [ 0. 0. 0. ... 10. 0. 0.] [ 0. 0. 0. ... 16. 9. 0.] ... [ 0. 0. 1. ... 6. 0. 0.] [ 0. 0. 2. ... 12. 0. 0.] [ 0. 0. 10. ... 12. 1. 0.]]  digits.</description>
-    </item>
-    
-    <item>
-      <title>Bar_chart</title>
       <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/bar_chart/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
@@ -75,12 +66,30 @@
     </item>
     
     <item>
+      <title>Learning_and_predicting</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/sklearn/learning_and_predicting/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/sklearn/learning_and_predicting/</guid>
+      <description>from sklearn import datasets iris = datasets.load_iris() digits = datasets.load_digits()print(digits.data) [[ 0. 0. 5. ... 0. 0. 0.] [ 0. 0. 0. ... 10. 0. 0.] [ 0. 0. 0. ... 16. 9. 0.] ... [ 0. 0. 1. ... 6. 0. 0.] [ 0. 0. 2. ... 12. 0. 0.] [ 0. 0. 10. ... 12. 1. 0.]]  digits.target array([0, 1, 2, ..., 8, 9, 8])  from sklearn import svm clf = svm.</description>
+    </item>
+    
+    <item>
       <title>Lineplot</title>
       <link>https://aavinash1083.github.io/mlnotes/python/seaborn/lineplot/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
       
       <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/lineplot/</guid>
       <description>import numpy as np import pandas as pd import matplotlib.pyplot as plt import seaborn as sns %matplotlib inlinedata = pd.read_csv(&amp;#39;Whatsapp_chat.csv&amp;#39;, index_col=0) data  .dataframe tbody tr th:only-of-type { vertical-align: middle; } .dataframe tbody tr th { vertical-align: top; } .dataframe thead th { text-align: right; }    hours days months names timestamp     0 1 19 May Person4 2020-05-19   1 22 19 May Person3 2020-05-19   2 22 19 May Person3 2020-05-19   3 22 19 May Person1 2020-05-19   4 22 19 May Person3 2020-05-19   .</description>
+    </item>
+    
+    <item>
+      <title>Loading_Datasets</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/sklearn/loading_datasets/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/sklearn/loading_datasets/</guid>
+      <description>from sklearn import datasets iris = datasets.load_iris() digits = datasets.load_digits()print(digits.data) [[ 0. 0. 5. ... 0. 0. 0.] [ 0. 0. 0. ... 10. 0. 0.] [ 0. 0. 0. ... 16. 9. 0.] ... [ 0. 0. 1. ... 6. 0. 0.] [ 0. 0. 2. ... 12. 0. 0.] [ 0. 0. 10. ... 12. 1. 0.]]  digits.target array([0, 1, 2, ..., 8, 9, 8])  </description>
     </item>
     
     <item>

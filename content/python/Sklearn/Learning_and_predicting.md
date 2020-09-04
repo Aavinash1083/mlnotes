@@ -1,5 +1,5 @@
 ---
-title: "Loading_Datasets"
+title: "Learning_and_predicting"
 author: "Aavinash"
 date: 2020-09-04
 description: "-"
@@ -41,5 +41,31 @@ digits.target
 
 
 ```python
+from sklearn import svm
+clf = svm.SVC(gamma=0.001, C=100.)
+```
+
+
+```python
+clf.fit(digits.data[:-1], digits.target[:-1])
+```
+
+
+
+
+    SVC(C=100.0, gamma=0.001)
+
+
+
+
+```python
+clf.predict(digits.data[-1:])
 
 ```
+
+
+
+
+    array([8])
+
+
