@@ -210,6 +210,15 @@
     </item>
     
     <item>
+      <title>Function_in_Dataframes</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/pandas/function_in_dataframes/</link>
+      <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/pandas/function_in_dataframes/</guid>
+      <description># Import pandas package  import pandas as pd # Function to add  def add(a, b, c): return a + b + c def main(): # create a dictionary with  # three fields each  data = { &amp;#39;A&amp;#39;:[1, 2, 3], &amp;#39;B&amp;#39;:[4, 5, 6], &amp;#39;C&amp;#39;:[7, 8, 9] } # Convert the dictionary into DataFrame  df = pd.DataFrame(data) print(&amp;#34;Original DataFrame:\n&amp;#34;, df) df[&amp;#39;add&amp;#39;] = df.apply(lambda row : add(row[&amp;#39;A&amp;#39;], row[&amp;#39;B&amp;#39;], row[&amp;#39;C&amp;#39;]), axis = 1) print(&amp;#39;\nAfter Applying Function: &amp;#39;) # printing the new dataframe  print(df) if __name__ == &amp;#39;__main__&amp;#39;: main()  Original DataFrame: A B C 0 1 4 7 1 2 5 8 2 3 6 9 After Applying Function: A B C add 0 1 4 7 12 1 2 5 8 15 2 3 6 9 18  # Import pandas package  import pandas as pd def normalize(x, y): x_new = ((x - np.</description>
+    </item>
+    
+    <item>
       <title>Row_selection</title>
       <link>https://aavinash1083.github.io/mlnotes/python/pandas/row_selection/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
