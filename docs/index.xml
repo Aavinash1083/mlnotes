@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Distplot</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/seaborn/distplot/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/distplot/</guid>
+      <description>import seaborn as sns import matplotlib.pyplot as plt plt.style.use(&amp;#39;classic&amp;#39;) %matplotlib inline import numpy as np import pandas as pdrng = np.random.RandomState(0) x = np.linspace(0, 10, 500) y = np.cumsum(rng.randn(500, 6), 0)data = np.random.multivariate_normal([0, 0], [[5, 2], [2, 2]], size=2000) data = pd.DataFrame(data, columns=[&amp;#39;x&amp;#39;, &amp;#39;y&amp;#39;])sns.distplot(data[&amp;#39;x&amp;#39;]) sns.distplot(data[&amp;#39;y&amp;#39;]); sns.kdeplot(data); /home/aavinash1083/.local/lib/python3.8/site-packages/seaborn/distributions.py:690: UserWarning: Passing a 2D dataset for a bivariate plot is deprecated in favor of kdeplot(x, y), and it will cause an error in future versions.</description>
+    </item>
+    
+    <item>
       <title>GGplot</title>
       <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/ggplot/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
