@@ -156,6 +156,15 @@
     </item>
     
     <item>
+      <title>Type_casting</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/sklearn/type_casting/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/sklearn/type_casting/</guid>
+      <description>import numpy as np from sklearn import random_projection rng = np.random.RandomState(0) X = rng.rand(10, 2000) X = np.array(X, dtype=&amp;#39;float32&amp;#39;) X.dtype dtype(&#39;float32&#39;)  transformer = random_projection.GaussianRandomProjection() X_new = transformer.fit_transform(X) X_new.dtype dtype(&#39;float64&#39;)  from sklearn import datasets from sklearn.svm import SVC iris = datasets.load_iris() clf = SVC() clf.fit(iris.data, iris.target) SVC()  list(clf.predict(iris.data[:3])) [0, 0, 0]  clf.fit(iris.data, iris.target_names[iris.target]) SVC()  list(clf.predict(iris.data[:3])) [&#39;setosa&#39;, &#39;setosa&#39;, &#39;setosa&#39;]  </description>
+    </item>
+    
+    <item>
       <title>pandas</title>
       <link>https://aavinash1083.github.io/mlnotes/python/pandas/pandas/</link>
       <pubDate>Wed, 12 Aug 2020 00:00:00 +0000</pubDate>
