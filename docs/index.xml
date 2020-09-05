@@ -147,6 +147,24 @@
     </item>
     
     <item>
+      <title>Linear_Regression</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/algorithms/linear_regression/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/algorithms/linear_regression/</guid>
+      <description>from sklearn.datasets import load_iris# save &amp;#34;bunch&amp;#34; object containing iris dataset and iits attributes iris = load_iris() type(iris)  sklearn.utils.Bunch  print (iris.data) iris.data.shape [[5.1 3.5 1.4 0.2] [4.9 3. 1.4 0.2] [4.7 3.2 1.3 0.2] [4.6 3.1 1.5 0.2] [5. 3.6 1.4 0.2] [5.4 3.9 1.7 0.4] [4.6 3.4 1.4 0.3] [5. 3.4 1.5 0.2] [4.4 2.9 1.4 0.2] [4.9 3.1 1.5 0.1] [5.4 3.7 1.5 0.2] [4.8 3.4 1.6 0.</description>
+    </item>
+    
+    <item>
+      <title>Lineplot</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/lineplot-copy1/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/matplotlib/lineplot-copy1/</guid>
+      <description>import pandas as pd import matplotlib.pyplot as plt import numpy as npiris=pd.</description>
+    </item>
+    
+    <item>
       <title>Lineplot</title>
       <link>https://aavinash1083.github.io/mlnotes/python/matplotlib/lineplot/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
