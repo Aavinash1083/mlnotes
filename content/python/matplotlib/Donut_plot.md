@@ -1,5 +1,5 @@
 ---
-title: "Donutplot"
+title: "Donut_plot"
 author: "Aavinash"
 date: 2020-09-04
 description: "-"
@@ -130,7 +130,7 @@ plt.show()
 ```
 
 
-![png](Donutplot_5_0.png)
+![png](Donut_plot_5_0.png)
 
 
 
