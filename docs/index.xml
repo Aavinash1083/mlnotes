@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Cluster_map</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/seaborn/cluster_map/</link>
+      <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/seaborn/cluster_map/</guid>
+      <description>import numpy as np # linear algebra import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv) import matplotlib.pyplot as plt import seaborn as sns import matplotlib_venn as venn from math import pi from pandas.plotting import parallel_coordinates # Input data files are available in the &amp;#34;../input/&amp;#34; directory. # For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directordata = pd.read_csv(&amp;#39;Iris.csv&amp;#39;) data = data.</description>
+    </item>
+    
+    <item>
       <title>Countplot </title>
       <link>https://aavinash1083.github.io/mlnotes/python/seaborn/countplot/</link>
       <pubDate>Fri, 04 Sep 2020 00:00:00 +0000</pubDate>
