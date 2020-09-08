@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-66582-32"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-66582-32');
+    </script>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<meta property="og:title" content="Confusion_Matrix" />
+<meta property="og:description" content="-" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://aavinash1083.github.io/mlnotes/python/sklearn/confusion_matrix/" /><meta property="article:published_time" content="2020-09-08T00:00:00&#43;00:00"/>
+<meta property="article:modified_time" content="2020-09-08T00:00:00&#43;00:00"/>
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Confusion_Matrix"/>
+<meta name="twitter:description" content="-"/>
+<meta name="generator" content="Hugo 0.50" /> 
+    
+    
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Confusion_Matrix",
+  "url": "https://aavinash1083.github.io/mlnotes/python/sklearn/confusion_matrix/",
+  "wordCount": "1304",
+  "datePublished": "2020-09-08T00:00:00&#43;00:00",
+  "dateModified": "2020-09-08T00:00:00&#43;00:00",
+  "author": {
+    "@type": "Person",
+    "name": "Aavinash"
+  },
+  "description": "-"
+}
+</script> 
+
+    <title>Confusion_Matrix</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+
+    
+    <link href="https://aavinash1083.github.io/mlnotes/css/custom.css" rel="stylesheet"> 
+    <link href="https://aavinash1083.github.io/mlnotes/css/syntax.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400,500,700" rel="stylesheet">
+        
+    <link href="" rel="alternate" type="application/rss+xml" title="Aavinash" /> 
+    
+    <script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\[','\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre','code'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+});
+</script>
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://aavinash1083.github.io/mlnotes/">Aavinash</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                <ul class="navbar-nav">
+                    
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+
+                 
+
+
+<article>
+  <div class="technical_note">
+  <header>
+      
+    <h1 class="technical_note_title">Confusion_Matrix</h1>
+    <div class="technical_note_date">
+      <time datetime=" 2020-09-08T00:00:00Z "> 08 Sep 2020</time>
+    </div>
+  </header>
+  <div class="content">
+  <div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Sample Decision Tree Classifier</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">datasets</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">metrics</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">dataset</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_iris</span><span class="p">()</span>
+<span class="n">dataset</span></code></pre></div>
+<pre><code>{'data': array([[5.1, 3.5, 1.4, 0.2],
+        [4.9, 3. , 1.4, 0.2],
+        [4.7, 3.2, 1.3, 0.2],
+        [4.6, 3.1, 1.5, 0.2],
+        [5. , 3.6, 1.4, 0.2],
+        [5.4, 3.9, 1.7, 0.4],
+        [4.6, 3.4, 1.4, 0.3],
+        [5. , 3.4, 1.5, 0.2],
+        [4.4, 2.9, 1.4, 0.2],
+        [4.9, 3.1, 1.5, 0.1],
+        [5.4, 3.7, 1.5, 0.2],
+        [4.8, 3.4, 1.6, 0.2],
+        [4.8, 3. , 1.4, 0.1],
+        [4.3, 3. , 1.1, 0.1],
+        [5.8, 4. , 1.2, 0.2],
+        [5.7, 4.4, 1.5, 0.4],
+        [5.4, 3.9, 1.3, 0.4],
+        [5.1, 3.5, 1.4, 0.3],
+        [5.7, 3.8, 1.7, 0.3],
+        [5.1, 3.8, 1.5, 0.3],
+        [5.4, 3.4, 1.7, 0.2],
+        [5.1, 3.7, 1.5, 0.4],
+        [4.6, 3.6, 1. , 0.2],
+        [5.1, 3.3, 1.7, 0.5],
+        [4.8, 3.4, 1.9, 0.2],
+        [5. , 3. , 1.6, 0.2],
+        [5. , 3.4, 1.6, 0.4],
+        [5.2, 3.5, 1.5, 0.2],
+        [5.2, 3.4, 1.4, 0.2],
+        [4.7, 3.2, 1.6, 0.2],
+        [4.8, 3.1, 1.6, 0.2],
+        [5.4, 3.4, 1.5, 0.4],
+        [5.2, 4.1, 1.5, 0.1],
+        [5.5, 4.2, 1.4, 0.2],
+        [4.9, 3.1, 1.5, 0.2],
+        [5. , 3.2, 1.2, 0.2],
+        [5.5, 3.5, 1.3, 0.2],
+        [4.9, 3.6, 1.4, 0.1],
+        [4.4, 3. , 1.3, 0.2],
+        [5.1, 3.4, 1.5, 0.2],
+        [5. , 3.5, 1.3, 0.3],
+        [4.5, 2.3, 1.3, 0.3],
+        [4.4, 3.2, 1.3, 0.2],
+        [5. , 3.5, 1.6, 0.6],
+        [5.1, 3.8, 1.9, 0.4],
+        [4.8, 3. , 1.4, 0.3],
+        [5.1, 3.8, 1.6, 0.2],
+        [4.6, 3.2, 1.4, 0.2],
+        [5.3, 3.7, 1.5, 0.2],
+        [5. , 3.3, 1.4, 0.2],
+        [7. , 3.2, 4.7, 1.4],
+        [6.4, 3.2, 4.5, 1.5],
+        [6.9, 3.1, 4.9, 1.5],
+        [5.5, 2.3, 4. , 1.3],
+        [6.5, 2.8, 4.6, 1.5],
+        [5.7, 2.8, 4.5, 1.3],
+        [6.3, 3.3, 4.7, 1.6],
+        [4.9, 2.4, 3.3, 1. ],
+        [6.6, 2.9, 4.6, 1.3],
+        [5.2, 2.7, 3.9, 1.4],
+        [5. , 2. , 3.5, 1. ],
+        [5.9, 3. , 4.2, 1.5],
+        [6. , 2.2, 4. , 1. ],
+        [6.1, 2.9, 4.7, 1.4],
+        [5.6, 2.9, 3.6, 1.3],
+        [6.7, 3.1, 4.4, 1.4],
+        [5.6, 3. , 4.5, 1.5],
+        [5.8, 2.7, 4.1, 1. ],
+        [6.2, 2.2, 4.5, 1.5],
+        [5.6, 2.5, 3.9, 1.1],
+        [5.9, 3.2, 4.8, 1.8],
+        [6.1, 2.8, 4. , 1.3],
+        [6.3, 2.5, 4.9, 1.5],
+        [6.1, 2.8, 4.7, 1.2],
+        [6.4, 2.9, 4.3, 1.3],
+        [6.6, 3. , 4.4, 1.4],
+        [6.8, 2.8, 4.8, 1.4],
+        [6.7, 3. , 5. , 1.7],
+        [6. , 2.9, 4.5, 1.5],
+        [5.7, 2.6, 3.5, 1. ],
+        [5.5, 2.4, 3.8, 1.1],
+        [5.5, 2.4, 3.7, 1. ],
+        [5.8, 2.7, 3.9, 1.2],
+        [6. , 2.7, 5.1, 1.6],
+        [5.4, 3. , 4.5, 1.5],
+        [6. , 3.4, 4.5, 1.6],
+        [6.7, 3.1, 4.7, 1.5],
+        [6.3, 2.3, 4.4, 1.3],
+        [5.6, 3. , 4.1, 1.3],
+        [5.5, 2.5, 4. , 1.3],
+        [5.5, 2.6, 4.4, 1.2],
+        [6.1, 3. , 4.6, 1.4],
+        [5.8, 2.6, 4. , 1.2],
+        [5. , 2.3, 3.3, 1. ],
+        [5.6, 2.7, 4.2, 1.3],
+        [5.7, 3. , 4.2, 1.2],
+        [5.7, 2.9, 4.2, 1.3],
+        [6.2, 2.9, 4.3, 1.3],
+        [5.1, 2.5, 3. , 1.1],
+        [5.7, 2.8, 4.1, 1.3],
+        [6.3, 3.3, 6. , 2.5],
+        [5.8, 2.7, 5.1, 1.9],
+        [7.1, 3. , 5.9, 2.1],
+        [6.3, 2.9, 5.6, 1.8],
+        [6.5, 3. , 5.8, 2.2],
+        [7.6, 3. , 6.6, 2.1],
+        [4.9, 2.5, 4.5, 1.7],
+        [7.3, 2.9, 6.3, 1.8],
+        [6.7, 2.5, 5.8, 1.8],
+        [7.2, 3.6, 6.1, 2.5],
+        [6.5, 3.2, 5.1, 2. ],
+        [6.4, 2.7, 5.3, 1.9],
+        [6.8, 3. , 5.5, 2.1],
+        [5.7, 2.5, 5. , 2. ],
+        [5.8, 2.8, 5.1, 2.4],
+        [6.4, 3.2, 5.3, 2.3],
+        [6.5, 3. , 5.5, 1.8],
+        [7.7, 3.8, 6.7, 2.2],
+        [7.7, 2.6, 6.9, 2.3],
+        [6. , 2.2, 5. , 1.5],
+        [6.9, 3.2, 5.7, 2.3],
+        [5.6, 2.8, 4.9, 2. ],
+        [7.7, 2.8, 6.7, 2. ],
+        [6.3, 2.7, 4.9, 1.8],
+        [6.7, 3.3, 5.7, 2.1],
+        [7.2, 3.2, 6. , 1.8],
+        [6.2, 2.8, 4.8, 1.8],
+        [6.1, 3. , 4.9, 1.8],
+        [6.4, 2.8, 5.6, 2.1],
+        [7.2, 3. , 5.8, 1.6],
+        [7.4, 2.8, 6.1, 1.9],
+        [7.9, 3.8, 6.4, 2. ],
+        [6.4, 2.8, 5.6, 2.2],
+        [6.3, 2.8, 5.1, 1.5],
+        [6.1, 2.6, 5.6, 1.4],
+        [7.7, 3. , 6.1, 2.3],
+        [6.3, 3.4, 5.6, 2.4],
+        [6.4, 3.1, 5.5, 1.8],
+        [6. , 3. , 4.8, 1.8],
+        [6.9, 3.1, 5.4, 2.1],
+        [6.7, 3.1, 5.6, 2.4],
+        [6.9, 3.1, 5.1, 2.3],
+        [5.8, 2.7, 5.1, 1.9],
+        [6.8, 3.2, 5.9, 2.3],
+        [6.7, 3.3, 5.7, 2.5],
+        [6.7, 3. , 5.2, 2.3],
+        [6.3, 2.5, 5. , 1.9],
+        [6.5, 3. , 5.2, 2. ],
+        [6.2, 3.4, 5.4, 2.3],
+        [5.9, 3. , 5.1, 1.8]]),
+ 'target': array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+        0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+        2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]),
+ 'frame': None,
+ 'target_names': array(['setosa', 'versicolor', 'virginica'], dtype='&lt;U10'),
+ 'DESCR': '.. _iris_dataset:\n\nIris plants dataset\n--------------------\n\n**Data Set Characteristics:**\n\n    :Number of Instances: 150 (50 in each of three classes)\n    :Number of Attributes: 4 numeric, predictive attributes and the class\n    :Attribute Information:\n        - sepal length in cm\n        - sepal width in cm\n        - petal length in cm\n        - petal width in cm\n        - class:\n                - Iris-Setosa\n                - Iris-Versicolour\n                - Iris-Virginica\n                \n    :Summary Statistics:\n\n    ============== ==== ==== ======= ===== ====================\n                    Min  Max   Mean    SD   Class Correlation\n    ============== ==== ==== ======= ===== ====================\n    sepal length:   4.3  7.9   5.84   0.83    0.7826\n    sepal width:    2.0  4.4   3.05   0.43   -0.4194\n    petal length:   1.0  6.9   3.76   1.76    0.9490  (high!)\n    petal width:    0.1  2.5   1.20   0.76    0.9565  (high!)\n    ============== ==== ==== ======= ===== ====================\n\n    :Missing Attribute Values: None\n    :Class Distribution: 33.3% for each of 3 classes.\n    :Creator: R.A. Fisher\n    :Donor: Michael Marshall (MARSHALL%PLU@io.arc.nasa.gov)\n    :Date: July, 1988\n\nThe famous Iris database, first used by Sir R.A. Fisher. The dataset is taken\nfrom Fisher\'s paper. Note that it\'s the same as in R, but not as in the UCI\nMachine Learning Repository, which has two wrong data points.\n\nThis is perhaps the best known database to be found in the\npattern recognition literature.  Fisher\'s paper is a classic in the field and\nis referenced frequently to this day.  (See Duda &amp; Hart, for example.)  The\ndata set contains 3 classes of 50 instances each, where each class refers to a\ntype of iris plant.  One class is linearly separable from the other 2; the\nlatter are NOT linearly separable from each other.\n\n.. topic:: References\n\n   - Fisher, R.A. &quot;The use of multiple measurements in taxonomic problems&quot;\n     Annual Eugenics, 7, Part II, 179-188 (1936); also in &quot;Contributions to\n     Mathematical Statistics&quot; (John Wiley, NY, 1950).\n   - Duda, R.O., &amp; Hart, P.E. (1973) Pattern Classification and Scene Analysis.\n     (Q327.D83) John Wiley &amp; Sons.  ISBN 0-471-22361-1.  See page 218.\n   - Dasarathy, B.V. (1980) &quot;Nosing Around the Neighborhood: A New System\n     Structure and Classification Rule for Recognition in Partially Exposed\n     Environments&quot;.  IEEE Transactions on Pattern Analysis and Machine\n     Intelligence, Vol. PAMI-2, No. 1, 67-71.\n   - Gates, G.W. (1972) &quot;The Reduced Nearest Neighbor Rule&quot;.  IEEE Transactions\n     on Information Theory, May 1972, 431-433.\n   - See also: 1988 MLC Proceedings, 54-64.  Cheeseman et al&quot;s AUTOCLASS II\n     conceptual clustering system finds 3 classes in the data.\n   - Many, many more ...',
+ 'feature_names': ['sepal length (cm)',
+  'sepal width (cm)',
+  'petal length (cm)',
+  'petal width (cm)'],
+ 'filename': '/home/aavinash1083/miniconda3/envs/kagglevil_/lib/python3.8/site-packages/sklearn/datasets/data/iris.csv'}
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">model</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">model</span><span class="p">)</span></code></pre></div>
+<pre><code>DecisionTreeClassifier()
+</code></pre>
+<div class="highlight"><pre class="chroma"><code class="language-python" data-lang="python"><span class="n">expected</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">target</span>
+<span class="n">predicted</span> <span class="o">=</span> <span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">dataset</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+<span class="c1"># summarize the fit of the model</span>
+<span class="k">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">classification_report</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">predicted</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">expected</span><span class="p">,</span> <span class="n">predicted</span><span class="p">))</span></code></pre></div>
+<pre><code>              precision    recall  f1-score   support
+
+           0       1.00      1.00      1.00        50
+           1       1.00      1.00      1.00        50
+           2       1.00      1.00      1.00        50
+
+    accuracy                           1.00       150
+   macro avg       1.00      1.00      1.00       150
+weighted avg       1.00      1.00      1.00       150
+
+[[50  0  0]
+ [ 0 50  0]
+ [ 0  0 50]]
+</code></pre>
+
+</div>
+  <aside>
+      
+      </aside>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+
+        </div>
+    </div>
+
+    
+
+    <footer class="footer text-center">
+        <div class="container">
+            <span class="text-muted">This project contains 53 pages and is available on <a href="https://github.com/aavinash1083">GitHub</a>. Copyright &copy; TEAM TACT, <time datetime="2019">2019</time>.</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
