@@ -6,10 +6,19 @@
     <description>Recent content on Aavinash</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Sep 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aavinash1083.github.io/mlnotes/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Visualizations</title>
+      <link>https://aavinash1083.github.io/mlnotes/python/numpy/visualizations/</link>
+      <pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://aavinash1083.github.io/mlnotes/python/numpy/visualizations/</guid>
+      <description>import numpy as np from matplotlib import pyplot as plt x = np.arange(1,11) y = 2 * x + 5 plt.title(&amp;#34;Matplotlib demo&amp;#34;) plt.xlabel(&amp;#34;x axis caption&amp;#34;) plt.ylabel(&amp;#34;y axis caption&amp;#34;) plt.plot(x,y) plt.show() import numpy as np from matplotlib import pyplot as plt x = np.arange(1,11) y = 2 * x + 5 plt.title(&amp;#34;Matplotlib demo&amp;#34;) plt.xlabel(&amp;#34;x axis caption&amp;#34;) plt.ylabel(&amp;#34;y axis caption&amp;#34;) plt.plot(x,y,&amp;#34;ob&amp;#34;) plt.show()  import numpy as np import matplotlib.pyplot as plt # Compute the x and y coordinates for points on a sine curve  x = np.</description>
+    </item>
     
     <item>
       <title>Confusion_Matrix</title>
